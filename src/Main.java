@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        Gryffindor[] gryf = new Gryffindor[10];
         Hogwarts[] students = {
         new Hogwarts("Гарри Потер", 80, 90),
         new Hogwarts("Гермиона Грейнджер", 90, 70),
@@ -17,5 +18,18 @@ public class Main {
                 Hogwarts.compareBetween (students[i], students[j]);
             }
         }
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            gryf[i] = choiceDepartment(students[i], 1);          // зачисление Гарри, Гермионы и Рона на факультет Гриффиндор
+            System.out.println(gryf[i]);
+        }
+        System.out.println();
+        Gryffindor.compareBetweenGryffindor(gryf[0], gryf[1]);
+        Gryffindor.compareBetweenGryffindor(gryf[0], gryf[2]);
+        Gryffindor.compareBetweenGryffindor(gryf[1], gryf[2]);
+    }
+    public static Gryffindor choiceDepartment(Hogwarts student, int dep) {
+            return new Gryffindor( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
+                    (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()) , (int) (70 + 31*Math.random()));
     }
 }

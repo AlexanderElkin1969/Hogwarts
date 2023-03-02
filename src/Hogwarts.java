@@ -1,16 +1,24 @@
 public class Hogwarts {
-    private String name;
+    static  int size = 0;
+    private  int id;
+    private final String NAME;
     private int powerOfMagic;
     private  int distanceOfTransgression;
 
     public Hogwarts(String name, int powerOfMagic, int distanceOfTransgression) {
-        this.name = name;
+        size ++;
+        this.id = size;
+        this.NAME = name;
         this.powerOfMagic = powerOfMagic;
         this.distanceOfTransgression = distanceOfTransgression;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
+    }
+
+    public String getNAME() {
+        return NAME;
     }
 
     public int getPowerOfMagic() {
@@ -31,7 +39,7 @@ public class Hogwarts {
 
     @Override
     public String toString() {
-        return "Ученик Хогвардца : " + name + ", Магическая сила = " + powerOfMagic +
+        return  id + ". Ученик Хогвардца : " + NAME + ", Магическая сила = " + powerOfMagic +
                 ", Расстояние трансгрессии = " + distanceOfTransgression;
     }
 
@@ -39,11 +47,11 @@ public class Hogwarts {
         int power1 = one.getPowerOfMagic() + one.getDistanceOfTransgression();
         int power2 = second.getPowerOfMagic() + second.getDistanceOfTransgression();
         if (power1 == power2){
-            System.out.println( one.getName() + " и " + second.getName() + " обладают равной мощностью магии.");
+            System.out.println( one.getNAME() + " и " + second.getNAME() + " обладают равной мощностью магии.");
         } else if (power1 > power2) {
-            System.out.println( one.getName() + " обладает большей мощностью магии, чем "+ second.getName());
+            System.out.println( one.getNAME() + " обладает большей мощностью магии, чем "+ second.getNAME());
         }else {
-            System.out.println( one.getName() + " обладает меньшей мощностью магии, чем "+ second.getName());
+            System.out.println( one.getNAME() + " обладает меньшей мощностью магии, чем "+ second.getNAME());
         }
     }
 }
