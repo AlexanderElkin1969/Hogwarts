@@ -48,7 +48,7 @@ public class Gryffindor extends Hogwarts {
                 ", Честь= " + honor +
                 ", Храбрость= " + bravery;
     }
-    public static void compareBetweenGryffindor(Gryffindor one, Gryffindor second) {
+    public static void compareBetween(Gryffindor one, Gryffindor second) {
         int quality1 = one.getNobility() + one.getHonor() + one.getBravery();
         int quality2 = second.getNobility() + second.getHonor() + second.getBravery();
         if (quality1 == quality2){
