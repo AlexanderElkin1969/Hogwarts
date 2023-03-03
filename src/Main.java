@@ -2,6 +2,7 @@ public class Main {
     public static void main(String[] args) {
         Gryffindor[] gryf = new Gryffindor[5];
         Puffenduy[] puff = new Puffenduy[5];
+        Kogtevran[] kogt = new Kogtevran[5];
         Hogwarts[] students = {
             new Hogwarts("Гарри Потер", 80, 90),
             new Hogwarts("Гермиона Грейнджер", 90, 70),
@@ -47,14 +48,26 @@ public class Main {
         Puffenduy.compareBetween(puff[0], puff[2]);
         Puffenduy.compareBetween(puff[1], puff[2]);
         System.out.println();
-        Hogwarts.compareBetween (gryf[1], puff[1]);
+        System.out.println("факультет Когтевран :");
+        for (int i = 6; i < 9; i++) {
+            kogt[i-6] = choiceDepartment(students[i], 0, 0);          // зачисление на факультет Когтевран
+            System.out.println(kogt[i-6]);
+        }
+        System.out.println();
+        Kogtevran.compareBetween(kogt[0], kogt[1]);
+        Kogtevran.compareBetween(kogt[0], kogt[2]);
+        Kogtevran.compareBetween(kogt[1], kogt[2]);
     }
     public static Gryffindor choiceDepartment(Hogwarts student) {
             return new Gryffindor( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
                     (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()) , (int) (70 + 31*Math.random()));
     }
-    public static Puffenduy choiceDepartment(Hogwarts student, int dep) {
+    public static Puffenduy choiceDepartment(Hogwarts student, int a) {
         return new Puffenduy( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
                 (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()) , (int) (70 + 31*Math.random()));
+    }
+    public static Kogtevran choiceDepartment(Hogwarts student, int a, int b) {
+        return new Kogtevran( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
+                (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()) , (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()));
     }
 }
