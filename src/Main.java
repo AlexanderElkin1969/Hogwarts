@@ -6,17 +6,17 @@ public class Main {
         Slizerin[] sliz = new Slizerin[5];
         Hogwarts[] students = {
             new Hogwarts("Гарри Потер", 50, 20),
-            new Hogwarts("Гермиона Грейнджер", 60, 10),
+            new Hogwarts("Гермиона Грейнджер", 50, 10),
             new Hogwarts("Рон Уизли", 40, 10),
             new Hogwarts("Захария Смит", 40, 0),
-            new Hogwarts("Седрик Диггори", 60, 10),
+            new Hogwarts("Седрик Диггори", 50, 10),
             new Hogwarts("Джастин Финч-Флетчли", 50, 20),
             new Hogwarts("Чжоу Чанг", 40, 10),
-            new Hogwarts("Падма Патил", 50, 0),
-            new Hogwarts("Маркус Белби", 60, 10),
+            new Hogwarts("Падма Патил", 50, 20),
+            new Hogwarts("Маркус Белби", 30, 10),
             new Hogwarts("Драко Малфой", 50, 20),
             new Hogwarts("Грэхэм Монтегю", 40, 0),
-            new Hogwarts("Грегори Гойл", 40, 10),
+            new Hogwarts("Грегори Гойл", 30, 10),
         };                                                                              //  Ученики прибывают в Хогвартс
         System.out.println("Школа магии и волшебства ХОГВАРДС :");
         for (int i = 0; i < students.length; i++) {
@@ -75,6 +75,15 @@ public class Main {
         Hogwarts.compareBetween (puff[1], kogt[1]);
         Hogwarts.compareBetween (puff[1], sliz[1]);
         Hogwarts.compareBetween (kogt[1], sliz[1]);
+        gryf[1].setPowerOfMagic(70);                                //  Гермиона много занималать магией на практике
+        puff[1].setPowerOfMagic(60);
+        kogt[1].setPowerOfMagic(55);
+        sliz[1].setPowerOfMagic(50);
+        System.out.println("После полугода занятий в Хогвардсе :");
+        Hogwarts.compareBetween (gryf[1], puff[1]);                 //  сравнение учеников разных факультетов
+        Hogwarts.compareBetween (gryf[1], kogt[1]);
+        Hogwarts.compareBetween (gryf[1], sliz[1]);
+
     }
     public static Gryffindor choiceDepartmentGryffindor(Hogwarts student) {
             return new Gryffindor( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
