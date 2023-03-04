@@ -3,6 +3,7 @@ public class Main {
         Gryffindor[] gryf = new Gryffindor[5];
         Puffenduy[] puff = new Puffenduy[5];
         Kogtevran[] kogt = new Kogtevran[5];
+        Slizerin[] sliz = new Slizerin[5];
         Hogwarts[] students = {
             new Hogwarts("Гарри Потер", 80, 90),
             new Hogwarts("Гермиона Грейнджер", 90, 70),
@@ -57,6 +58,23 @@ public class Main {
         Kogtevran.compareBetween(kogt[0], kogt[1]);
         Kogtevran.compareBetween(kogt[0], kogt[2]);
         Kogtevran.compareBetween(kogt[1], kogt[2]);
+        System.out.println();
+        System.out.println("факультет Слизерин :");
+        for (int i = 9; i < 12; i++) {
+            sliz[i-9] = choiceDepartment(students[i], 0, 0, 0);     // зачисление на факультет Слизерин
+            System.out.println(sliz[i-9]);
+        }
+        System.out.println();
+        Slizerin.compareBetween(sliz[0], sliz[1]);
+        Slizerin.compareBetween(sliz[0], sliz[2]);
+        Slizerin.compareBetween(sliz[1], sliz[2]);
+        System.out.println();
+        Hogwarts.compareBetween (gryf[1], puff[1]);                 //  сравнение учеников разных факультетов
+        Hogwarts.compareBetween (gryf[1], kogt[1]);
+        Hogwarts.compareBetween (gryf[1], sliz[1]);
+        Hogwarts.compareBetween (puff[1], kogt[1]);
+        Hogwarts.compareBetween (puff[1], sliz[1]);
+        Hogwarts.compareBetween (kogt[1], sliz[1]);
     }
     public static Gryffindor choiceDepartment(Hogwarts student) {
             return new Gryffindor( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
@@ -69,5 +87,10 @@ public class Main {
     public static Kogtevran choiceDepartment(Hogwarts student, int a, int b) {
         return new Kogtevran( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
                 (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()) , (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()));
+    }
+    public static Slizerin choiceDepartment(Hogwarts student, int a, int b, int c) {
+        return new Slizerin( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),
+                (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()) , (int) (70 + 31*Math.random()),
+                (int) (70 + 31*Math.random()), (int) (70 + 31*Math.random()));
     }
 }
