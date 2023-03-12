@@ -48,15 +48,19 @@ public class Puffenduy extends Hogwarts {
                 ", Верность= " + loyalty +
                 ", Чесность= " + honesty;
     }
-    public static void compareBetween(Puffenduy one, Puffenduy second) {
-        int quality1 = one.getZeal() + one.getLoyalty() + one.getHonesty();
-        int quality2 = second.getZeal() + second.getLoyalty() + second.getHonesty();
+    private int ability() {
+        return (zeal + loyalty + honesty);
+    }
+
+    public void compareBetween (Puffenduy this, Puffenduy other) {
+        int quality1 = this.ability();
+        int quality2 = other.ability();
         if (quality1 == quality2){
-            System.out.println( one.getNAME() + " и " + second.getNAME() + " оба прекрасные Пуффендуйцы.");
+            System.out.println( this.getNAME() + " и " + other.getNAME() + " оба прекрасные Пуффендуйцы.");
         } else if (quality1 > quality2) {
-            System.out.println( one.getNAME() + " лучший Пуффендуец, чем "+ second.getNAME());
+            System.out.println( this.getNAME() + " лучший Пуффендуец, чем "+ other.getNAME());
         }else {
-            System.out.println( second.getNAME() + " лучший Пуффендуец, чем " + one.getNAME());
+            System.out.println( other.getNAME() + " лучший Пуффендуец, чем " + this.getNAME());
         }
     }
 }

@@ -48,15 +48,20 @@ public class Gryffindor extends Hogwarts {
                 ", Честь= " + honor +
                 ", Храбрость= " + bravery;
     }
-    public static void compareBetween(Gryffindor one, Gryffindor second) {
-        int quality1 = one.getNobility() + one.getHonor() + one.getBravery();
-        int quality2 = second.getNobility() + second.getHonor() + second.getBravery();
+
+    private int ability() {
+        return (nobility + honor + bravery);
+    }
+
+    public void compareBetween (Gryffindor this, Gryffindor other) {
+        int quality1 = this.ability();
+        int quality2 = other.ability();
         if (quality1 == quality2){
-            System.out.println( one.getNAME() + " и " + second.getNAME() + " оба прекрасные Гриффиндорцы.");
+            System.out.println( this.getNAME() + " и " + other.getNAME() + " оба прекрасные Гриффиндорцы.");
         } else if (quality1 > quality2) {
-            System.out.println( one.getNAME() + " лучший Гриффиндорец, чем "+ second.getNAME());
+            System.out.println( this.getNAME() + " лучший Гриффиндорец, чем "+ other.getNAME());
         }else {
-            System.out.println( second.getNAME() + " лучший Гриффиндорец, чем " + one.getNAME());
+            System.out.println( other.getNAME() + " лучший Гриффиндорец, чем " + this.getNAME());
         }
     }
 }

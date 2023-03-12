@@ -43,15 +43,19 @@ public class Hogwarts {
                 ", Расстояние трансгрессии = " + distanceOfTransgression;
     }
 
-    public static void compareBetween (Hogwarts one, Hogwarts second) {
-        int power1 = one.getPowerOfMagic() + one.getDistanceOfTransgression();
-        int power2 = second.getPowerOfMagic() + second.getDistanceOfTransgression();
+    private int ability() {
+        return (powerOfMagic + distanceOfTransgression);
+    }
+
+    public void compareBetween (Hogwarts this, Hogwarts other) {
+        int power1 = this.ability();
+        int power2 = other.ability();
         if (power1 == power2){
-            System.out.println( one.getNAME() + " и " + second.getNAME() + " обладают равной мощностью магии.");
+            System.out.println( this.getNAME() + " и " + other.getNAME() + " обладают равной мощностью магии.");
         } else if (power1 > power2) {
-            System.out.println( one.getNAME() + " обладает большей мощностью магии, чем "+ second.getNAME());
+            System.out.println( this.getNAME() + " обладает большей мощностью магии, чем "+ other.getNAME());
         }else {
-            System.out.println( one.getNAME() + " обладает меньшей мощностью магии, чем "+ second.getNAME());
+            System.out.println( this.getNAME() + " обладает меньшей мощностью магии, чем "+ other.getNAME());
         }
     }
 }

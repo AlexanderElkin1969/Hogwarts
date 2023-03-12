@@ -25,7 +25,7 @@ public class Main {
         System.out.println();
         for (int i = 0; i < students.length - 1; i++) {
             for (int j = i+1; j < students.length; j++) {
-                Hogwarts.compareBetween (students[i], students[j]);
+                students[i].compareBetween (students[j]);
             }
         }
         System.out.println();                                           //  Шляпа-распределительница зачисляет учеников в факультеты
@@ -35,9 +35,9 @@ public class Main {
             System.out.println(gryf[i]);
         }
         System.out.println();
-        Gryffindor.compareBetween(gryf[0], gryf[1]);
-        Gryffindor.compareBetween(gryf[0], gryf[2]);
-        Gryffindor.compareBetween(gryf[1], gryf[2]);
+        gryf[0].compareBetween(gryf[1]);
+        gryf[0].compareBetween(gryf[2]);
+        gryf[1].compareBetween(gryf[2]);
         System.out.println();
         System.out.println("факультет Пуффендуй :");
         for (int i = 3; i < 6; i++) {
@@ -45,9 +45,9 @@ public class Main {
             System.out.println(puff[i-3]);
         }
         System.out.println();
-        Puffenduy.compareBetween(puff[0], puff[1]);
-        Puffenduy.compareBetween(puff[0], puff[2]);
-        Puffenduy.compareBetween(puff[1], puff[2]);
+        puff[0].compareBetween(puff[1]);
+        puff[0].compareBetween(puff[2]);
+        puff[1].compareBetween(puff[2]);
         System.out.println();
         System.out.println("факультет Когтевран :");
         for (int i = 6; i < 9; i++) {
@@ -55,9 +55,9 @@ public class Main {
             System.out.println(kogt[i-6]);
         }
         System.out.println();
-        Kogtevran.compareBetween(kogt[0], kogt[1]);
-        Kogtevran.compareBetween(kogt[0], kogt[2]);
-        Kogtevran.compareBetween(kogt[1], kogt[2]);
+        kogt[0].compareBetween(kogt[1]);
+        kogt[0].compareBetween(kogt[2]);
+        kogt[1].compareBetween(kogt[2]);
         System.out.println();
         System.out.println("факультет Слизерин :");
         for (int i = 9; i < 12; i++) {
@@ -65,25 +65,21 @@ public class Main {
             System.out.println(sliz[i-9]);
         }
         System.out.println();
-        Slizerin.compareBetween(sliz[0], sliz[1]);
-        Slizerin.compareBetween(sliz[0], sliz[2]);
-        Slizerin.compareBetween(sliz[1], sliz[2]);
+        sliz[0].compareBetween(sliz[1]);
+        sliz[0].compareBetween(sliz[2]);
+        sliz[1].compareBetween(sliz[2]);
         System.out.println();
-        Hogwarts.compareBetween (gryf[1], puff[1]);                 //  сравнение учеников разных факультетов
-        Hogwarts.compareBetween (gryf[1], kogt[1]);
-        Hogwarts.compareBetween (gryf[1], sliz[1]);
-        Hogwarts.compareBetween (puff[1], kogt[1]);
-        Hogwarts.compareBetween (puff[1], sliz[1]);
-        Hogwarts.compareBetween (kogt[1], sliz[1]);
-        gryf[1].setPowerOfMagic(70);                                //  Гермиона много занималать магией на практике
+        gryf[1].compareBetween(puff[1]);                 //  сравнение учеников разных факультетов
+        gryf[1].compareBetween(kogt[1]);
+        gryf[1].compareBetween(sliz[1]);
+        gryf[1].setPowerOfMagic(70);                      //  Гермиона много занималать магией на практике
         puff[1].setPowerOfMagic(60);
         kogt[1].setPowerOfMagic(55);
         sliz[1].setPowerOfMagic(50);
         System.out.println("После полугода занятий в Хогвардсе :");
-        Hogwarts.compareBetween (gryf[1], puff[1]);                 //  сравнение учеников разных факультетов
-        Hogwarts.compareBetween (gryf[1], kogt[1]);
-        Hogwarts.compareBetween (gryf[1], sliz[1]);
-
+        gryf[1].compareBetween(puff[1]);                 //  сравнение учеников разных факультетов
+        gryf[1].compareBetween(kogt[1]);
+        gryf[1].compareBetween(sliz[1]);
     }
     public static Gryffindor choiceDepartmentGryffindor(Hogwarts student) {
             return new Gryffindor( student.getNAME(), student.getPowerOfMagic(), student.getDistanceOfTransgression(),

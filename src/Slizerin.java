@@ -70,15 +70,19 @@ public class Slizerin extends Hogwarts {
                 ", Находчивость= " + resourcefulness +
                 ", Жажда власти= " + desireToDominate;
     }
-    public static void compareBetween(Slizerin one, Slizerin second) {
-        int quality1 = one.getCunning() + one.getResoluteness() + one.getAmbition() + one.getResourcefulness() + one.getDesireToDominate();
-        int quality2 = second.getCunning() + second.getResoluteness() + second.getAmbition() + second.getResourcefulness() + second.getDesireToDominate();
+    private int ability() {
+        return (cunning + resoluteness + ambition + resourcefulness + desireToDominate);
+    }
+
+    public void compareBetween (Slizerin this, Slizerin other) {
+        int quality1 = this.ability();
+        int quality2 = other.ability();
         if (quality1 == quality2){
-            System.out.println( one.getNAME() + " и " + second.getNAME() + " оба прекрасные Слизеринцы.");
+            System.out.println( this.getNAME() + " и " + other.getNAME() + " оба прекрасные Слизеринцы.");
         } else if (quality1 > quality2) {
-            System.out.println( one.getNAME() + " лучший Слизеринец, чем "+ second.getNAME());
+            System.out.println( this.getNAME() + " лучший Слизеринец, чем "+ other.getNAME());
         }else {
-            System.out.println( second.getNAME() + " лучший Слизеринец, чем " + one.getNAME());
+            System.out.println( other.getNAME() + " лучший Слизеринец, чем " + this.getNAME());
         }
     }
 }

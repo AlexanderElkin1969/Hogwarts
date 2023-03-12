@@ -59,15 +59,19 @@ public class Kogtevran extends Hogwarts {
                 ", Остроумие= " + ingenious +
                 ", Творчество= " + creation;
     }
-    public static void compareBetween(Kogtevran one, Kogtevran second) {
-        int quality1 = one.getIntellect() + one.getSapience() + one.getIngenious() + one.getCreation();
-        int quality2 = second.getIntellect() + second.getSapience() + second.getIngenious() + second.getCreation();
+    private int ability() {
+        return (intellect + sapience + ingenious + creation);
+    }
+
+    public void compareBetween (Kogtevran this, Kogtevran other) {
+        int quality1 = this.ability();
+        int quality2 = other.ability();
         if (quality1 == quality2){
-            System.out.println( one.getNAME() + " и " + second.getNAME() + " оба прекрасные Когтевранцы.");
+            System.out.println( this.getNAME() + " и " + other.getNAME() + " оба прекрасные Когтевранцы.");
         } else if (quality1 > quality2) {
-            System.out.println( one.getNAME() + " лучший Когтевранец, чем "+ second.getNAME());
+            System.out.println( this.getNAME() + " лучший Когтевранец, чем "+ other.getNAME());
         }else {
-            System.out.println( second.getNAME() + " лучший Когтевранец, чем " + one.getNAME());
+            System.out.println( other.getNAME() + " лучший Когтевранец, чем " + this.getNAME());
         }
     }
 }
